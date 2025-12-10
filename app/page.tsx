@@ -9,6 +9,13 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
+    // Only enable auto-navigation on desktop (screen width > 768px)
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+      return; // Don't set up observer on mobile
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

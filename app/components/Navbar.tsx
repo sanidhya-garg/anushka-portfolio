@@ -73,7 +73,7 @@ export default function Navbar({ activePage }: NavbarProps) {
                       <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent"></div>
                       <div className="absolute bottom-0 left-0 right-0 p-5">
                         <h3 className="text-white font-bold text-xl mb-1 drop-shadow-lg">BHM</h3>
-                        <p className="text-white/90 text-sm drop-shadow-md">Brand Identity</p>
+                        <p className="text-white/90 text-sm drop-shadow-md">UI/UX</p>
                       </div>
                       <div className="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

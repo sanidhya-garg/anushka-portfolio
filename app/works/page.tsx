@@ -186,14 +186,14 @@ export default function WorksPage() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-sm md:text-base text-white/60 tracking-widest uppercase"
               >
-                Visual Storytelling
+                UI/UX
               </motion.p>
               <motion.p 
                 variants={fadeInUp}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg md:text-xl text-white/80 leading-relaxed"
               >
-                A curated collection of visual narratives capturing moments and emotions.
+                UI/UX Journey of the Mess Management App for  Board of Hostel Management IIT Delhi.
               </motion.p>
               <motion.a 
                 variants={fadeInUp}
