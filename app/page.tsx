@@ -8,34 +8,7 @@ export default function Home() {
   const lastSectionRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  useEffect(() => {
-    // Only enable auto-navigation on desktop (screen width > 768px)
-    const isMobile = window.innerWidth <= 768;
-    
-    if (isMobile) {
-      return; // Don't set up observer on mobile
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // When the last section is fully visible, navigate to works
-          if (entry.isIntersecting && entry.intersectionRatio > 0.8) {
-            setTimeout(() => {
-              router.push('/works');
-            }, 500);
-          }
-        });
-      },
-      { threshold: 0.8 }
-    );
-
-    if (lastSectionRef.current) {
-      observer.observe(lastSectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [router]);
+  // Auto-navigation removed - users can navigate manually via navbar
 
   return (
     <div className="min-h-screen bg-black">
@@ -81,16 +54,23 @@ export default function Home() {
       </div>
 
       {/* Personal Skills Video */}
-      <div ref={lastSectionRef} className="relative w-full md:h-screen h-auto overflow-hidden">
+      <div ref={lastSectionRef} className="relative w-full md:h-screen h-auto overflow-hidden bg-black">
         <video
           autoPlay
           loop
           muted
           playsInline
           className="w-full md:h-full md:object-cover h-auto object-contain"
+          onError={(e) => console.error('Video failed to load:', e)}
         >
           <source src="/assets/Cover/personal skills.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
+        
+        {/* Footer */}
+        <div className="absolute bottom-4 w-full text-center z-10">
+          <p className="text-white/80 text-sm md:text-base drop-shadow-lg">Made with ❤️ by Anushka</p>
+        </div>
       </div>
     </div>
   );

@@ -40,6 +40,13 @@ export default function WorksPage() {
     '/assets/BHM/5.jpg'
   ];
 
+  const EDCImages = [
+    '/assets/edc24/2.png',
+    '/assets/edc24/3.png',
+    '/assets/edc24/4.png',
+    '/assets/edc24/5.png'
+  ];
+
   function openGallery(images: string[], start = 0) {
     setModalImages(images);
     setModalIndex(start);
@@ -471,6 +478,111 @@ export default function WorksPage() {
                   <p className="text-white text-sm font-semibold">Speakers</p>
                 </div>
               </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Project 4 - EDC */}
+        <section className="min-h-screen flex items-center py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto w-full">
+            {/* Image Grid */}
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={staggerContainer}
+              className="grid grid-cols-2 gap-4 order-2 lg:order-1"
+            >
+              <motion.div 
+                variants={slideFromRight}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="relative h-64 md:h-80 overflow-hidden rounded-2xl group cursor-pointer shadow-2xl shadow-emerald-500/20 hover:shadow-emerald-500/60"
+                onClick={() => openGallery(EDCImages, 0)}
+                whileHover={{ y: -5 }}
+                >
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/70 via-black/40 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Image src="/assets/edc24/2.png" alt="EDC 1" fill className="object-cover transition-all duration-700 group-hover:scale-125 group-hover:rotate-2" />
+                <div className="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="text-white text-sm font-semibold">Event Design</p>
+                </div>
+              </motion.div>
+              <motion.div 
+                variants={slideFromLeft}
+                transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+                className="relative h-40 md:h-60 mt-12 overflow-hidden rounded-2xl group cursor-pointer shadow-2xl"
+                onClick={() => openGallery(EDCImages, 1)}
+                >
+                <div className="absolute inset-0 bg-gradient-to-t from-teal-900/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Image src="/assets/edc24/3.png" alt="EDC 2" fill className="object-cover transition-all duration-700 group-hover:scale-125 group-hover:-rotate-2" />
+                <div className="absolute bottom-3 left-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="text-white text-xs font-semibold">Branding</p>
+                </div>
+              </motion.div>
+              <motion.div 
+                variants={slideFromRight}
+                transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                className="relative h-40 md:h-60 -mt-8 overflow-hidden rounded-2xl group cursor-pointer shadow-2xl"
+                onClick={() => openGallery(EDCImages, 2)}
+                >
+                <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/60 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Image src="/assets/edc24/4.png" alt="EDC 3" fill className="object-cover transition-all duration-700 group-hover:scale-125 group-hover:rotate-3" />
+                <div className="absolute bottom-3 left-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="text-white text-xs font-semibold">Visual Identity</p>
+                </div>
+              </motion.div>
+              <motion.div 
+                variants={slideFromLeft}
+                transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
+                className="relative h-64 md:h-80 -mt-20 overflow-hidden rounded-2xl group cursor-pointer shadow-2xl"
+                onClick={() => openGallery(EDCImages, 3)}
+                >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <Image src="/assets/edc24/5.png" alt="EDC 4" fill className="object-cover transition-all duration-700 group-hover:scale-125 group-hover:-rotate-2" />
+                <div className="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <p className="text-white text-sm font-semibold">Event Materials</p>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Text Content */}
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={staggerContainer}
+              className="flex flex-col justify-center space-y-6 order-1 lg:order-2"
+            >
+              <motion.h1 
+                variants={fadeInUp}
+                transition={{ duration: 0.8 }}
+                className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-600 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(52,211,153,0.5)]"
+                whileHover={{ scale: 1.05 }}
+              >
+                EDC
+              </motion.h1>
+              <motion.p 
+                variants={fadeInUp}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-sm md:text-base text-white/60 tracking-widest uppercase"
+              >
+                Entrepreneurship Development Cell
+              </motion.p>
+              <motion.p 
+                variants={fadeInUp}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-lg md:text-xl text-white/80 leading-relaxed"
+              >
+                Visual showcase of EDC IIT Delhi's branding and design work.
+              </motion.p>
+              <motion.a 
+                variants={fadeInUp}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                href="/works/EDC" 
+                className="flex items-center gap-3 text-white hover:text-emerald-400 transition-colors group w-fit"
+              >
+                <span className="text-sm tracking-widest uppercase">SEE COLLECTION</span>
+                <span className="transform group-hover:translate-x-2 transition-transform">→</span>
+              </motion.a>
             </motion.div>
           </div>
         </section>

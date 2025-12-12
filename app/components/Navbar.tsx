@@ -34,10 +34,10 @@ export default function Navbar({ activePage }: NavbarProps) {
             {worksDropdown && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[900px]">
                 <div className="bg-white/95 backdrop-blur-xl rounded-3xl border border-gray-200 shadow-2xl p-8">
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-4 gap-6">
                   <a href="/works/TedX" className="group relative overflow-hidden rounded-xl border border-gray-200 hover:border-red-400 transition-all duration-300 hover:shadow-xl">
                     <div className="relative h-56">
-                      <img src="/assets/Tedx/3.jpg" alt="TEDx" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img src="/assets/navbar/tedx.png" alt="TEDx" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent"></div>
                       <div className="absolute bottom-0 left-0 right-0 p-5">
                         <h3 className="text-white font-bold text-xl mb-1 drop-shadow-lg">TEDx</h3>
@@ -69,11 +69,27 @@ export default function Navbar({ activePage }: NavbarProps) {
                   
                   <a href="/works/BHM" className="group relative overflow-hidden rounded-xl border border-gray-200 hover:border-red-400 transition-all duration-300 hover:shadow-xl">
                     <div className="relative h-56">
-                      <img src="/assets/BHM/1.jpg" alt="BHM" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img src="/assets/navbar/bhm.png" alt="BHM" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                       <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent"></div>
                       <div className="absolute bottom-0 left-0 right-0 p-5">
                         <h3 className="text-white font-bold text-xl mb-1 drop-shadow-lg">BHM</h3>
                         <p className="text-white/90 text-sm drop-shadow-md">UI/UX</p>
+                      </div>
+                      <div className="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </a>
+                  
+                  <a href="/works/EDC" className="group relative overflow-hidden rounded-xl border border-gray-200 hover:border-red-400 transition-all duration-300 hover:shadow-xl">
+                    <div className="relative h-56">
+                      <img src="/assets/edc24/2.png" alt="EDC" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent"></div>
+                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                        <h3 className="text-white font-bold text-xl mb-1 drop-shadow-lg">EDC</h3>
+                        <p className="text-white/90 text-sm drop-shadow-md">Entrepreneurship Development Cell</p>
                       </div>
                       <div className="absolute top-3 right-3 w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -125,6 +141,9 @@ export default function Navbar({ activePage }: NavbarProps) {
             </a>
             <a href="/works/BHM" onClick={() => setMenuOpen(false)} className="text-white/80 hover:text-red-400 text-base transition-colors">
               BHM
+            </a>
+            <a href="/works/EDC" onClick={() => setMenuOpen(false)} className="text-white/80 hover:text-red-400 text-base transition-colors">
+              EDC
             </a>
           </div>
           <a href="/contact" onClick={() => setMenuOpen(false)} className={`${activePage === 'contact' ? 'text-red-400' : 'text-white hover:text-red-400'} text-lg font-medium transition-colors`}>
